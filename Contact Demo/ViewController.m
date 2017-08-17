@@ -19,16 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    [ContactManager showContactViewControllerWithContact:[ContactManager createContactPerson] viewController:self];
 }
 
-- (void)contactViewController:(CNContactViewController *)viewController didCompleteWithContact:(CNContact *)contact {
- }
-
-- (BOOL)contactViewController:(CNContactViewController *)viewController shouldPerformDefaultActionForContactProperty:(CNContactProperty *)property {
-    return YES;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
