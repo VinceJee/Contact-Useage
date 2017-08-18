@@ -37,7 +37,7 @@
         [request deleteContact:contact];
         printf("删除成功\n");
     } else {
-        NSAssert(contact==nil, @"delete contact is nil");
+        NSAssert(contact!=nil, @"delete contact is nil");
     }
     
     [[self class] executeRequest:request];
@@ -55,7 +55,7 @@
         [request updateContact:contact];
         printf("update成功\n");
     } else {
-        NSAssert(contact==nil, @"update contact is nil");
+        NSAssert(contact!=nil, @"update contact is nil");
     }
     
     [[self class] executeRequest:request];
@@ -76,7 +76,7 @@
 + (void)addContact:(CNMutableContact *)contact {
     
     if (!contact) {
-        NSAssert(contact==nil, @"add contact is nil");
+        NSAssert(contact!=nil, @"add contact is nil");
      }
     
     CNSaveRequest *request = [[CNSaveRequest alloc] init];
@@ -125,7 +125,7 @@
         return contacts;
     }
     
-    NSAssert(status==NO, @"authorized error");
+    NSAssert(status!=NO, @"authorized error");
     return nil;
 }
 
@@ -297,7 +297,7 @@
         [request addMember:contact toGroup:group];
          [[self class] executeRequest:request];
     } else {
-        NSAssert(contact=nil, @"moved contact is nil");
+        NSAssert(contact!=nil, @"moved contact is nil");
     }
 }
 
@@ -310,7 +310,7 @@
     NSError *err;
     NSArray *groups = [store groupsMatchingPredicate:nil error:&err];
     if (err) {
-        NSAssert(err==nil, @"get all groups occur error");
+        NSAssert(err!=nil, @"get all groups occur error");
     }
     
     return groups;
